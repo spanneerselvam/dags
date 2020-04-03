@@ -87,6 +87,18 @@ task_2 = BashOperator(
     dag = dag,
 )
 """
+task_3 simply executes a bash script that will print "Hello World". This is how you call a bash script in Airflow.
+"""
+task_3_command = """
+sudo chmod +x /usr/local/airflow/dags/Template/hello_world.sh
+sudo bash /usr/local/airflow/dags/Template/hello_world.sh
+"""
+task_3 = BashOperator(
+    task_id = 'Hello_World',
+    bash_command = task_3_command,
+    dag = dag
+)
+"""
 Here we set dependencies so that we can run certain tasks first.
 We want to run task_1 before we run task_2.
 """
