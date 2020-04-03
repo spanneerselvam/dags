@@ -88,6 +88,7 @@ task_2 = BashOperator(
 )
 """
 task_3 simply executes a bash script that will print "Hello World". This is how you call a bash script in Airflow.
+task_3_command (lines 93-96) are executed. Line 94 is critical to open permissions for the file. Line 95 calls the bash script.
 """
 task_3_command = """
 sudo chmod +x /usr/local/airflow/dags/Template/hello_world.sh
