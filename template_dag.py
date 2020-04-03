@@ -102,7 +102,7 @@ task_3 = BashOperator(
 Here we set dependencies so that we can run certain tasks first.
 We want to run task_1 before we run task_2.
 """
-task_1 >> task_2
+task_1 >> task_2 >> task_3
 """
 If we had three tasks we wanted to run and task_2 and task_3 had to run after task_1,
 we can write it as a list:
